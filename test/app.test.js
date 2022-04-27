@@ -1,5 +1,5 @@
 const fs = require("fs")
-
+const {assignFizzBuzzOrScoreTrick} = require('../app')
 const rawdata = fs.readFileSync("explorers.json");
 const explorers = JSON.parse(rawdata)
 
@@ -113,7 +113,83 @@ describe("test for app", () => {
 
     })
 
+    test('Asign FIZZ trick',()=>{        
+        
+        const explorer = {
+            "name": "Woopa9",
+            "githubUsername": "ajolonauta9",
+            "score": 9,
+            "mission": "java",
+            "stacks": [
+                "javascript",
+                "elixir",
+                "groovy",
+                "reasonML",
+                "elm"
+            ]
+        }
+
+        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZ')
+    })
+
+
+    test('Asign FIZZ trick',()=>{            
+        const explorer = {
+            "name": "Woopa9",
+            "githubUsername": "ajolonauta9",
+            "score": 9,
+            "mission": "java",
+            "stacks": [
+                "javascript",
+                "elixir",
+                "groovy",
+                "reasonML",
+                "elm"
+            ]
+        }
+
+        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZ')
+    })
+
+
+    test('Asign FIZZBUZZ trick',()=>{            
+        const explorer = {
+            "name": "Woopa15",
+            "githubUsername": "ajolonauta15",
+            "score": 15,
+            "mission": "node",
+            "stacks": [
+                "javascript",
+                "elixir",
+                "groovy",
+                "reasonML",
+                "elm"
+            ]
+        }
+
+        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZBUZZ')
+    })
+
+    test('Asign score value trick',()=>{            
+        const explorer = {
+            "name": "Woopa13",
+            "githubUsername": "ajolonauta13",
+            "score": 13,
+            "mission": "node",
+            "stacks": [
+                "javascript",
+                "elixir",
+                "groovy",
+                "reasonML",
+                "elm"
+            ]
+        }
+
+        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe(explorer.score)
+    })
+
     
+
 
     
 })

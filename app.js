@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { Module } = require("module");
 
 // Part 1 Read json file ===========================
 const rawdata = fs.readFileSync("explorers.json");
@@ -61,3 +62,27 @@ const assignFizzBuzzTrick = function(explorer){
 const explorersInNodeAndFizzBuzzTrick = explorersInNode.map((explorer) => assignFizzBuzzTrick(explorer));
 
 // Part 8: Get a list of the explorers in node, if the score is divisible by 5 and 3, set the property trick and the value FIZZBUZZ, if is just divisible by 5 set the property trcik and the value BUZZ, if is just divisible by 3 set the property trick and the value FIZZ, otherwise set the property trick and the score value. TODO
+const assignFizzBuzzOrScoreTrick = function(explorer){
+    const FIZZ = 'FIZZ'
+    const BUZZ = 'BUZZ'
+    const FIZZBUZZ = FIZZ+BUZZ    
+
+    if(explorer.score%5 === 0 && explorer.score%3 === 0){
+        explorer.trick = FIZZBUZZ
+    }      
+    else if(explorer.score % 3 ==  0){
+        explorer.trick = FIZZ
+    }
+    else if(explorer.score % 5 == 0){
+        explorer.trick = BUZZ
+    }
+    else{
+        explorer.trick = explorer.score
+    }
+
+    return explorer
+}
+
+module.exports = {assignFizzBuzzOrScoreTrick}
+//const explorersInNodeAndFizzBuzzOrScoreTrick = explorersInNode.map((explorer) => assignFizzBuzzOrScoreTrick(explorer));
+//console.log(explorersInNodeAndFizzBuzzOrScoreTrick)
