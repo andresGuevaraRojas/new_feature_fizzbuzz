@@ -1,7 +1,9 @@
 const fs = require("fs")
 const {assignFizzBuzzOrScoreTrick} = require('../app')
-const rawdata = fs.readFileSync("explorers.json");
-const explorers = JSON.parse(rawdata)
+const path = require('path')
+const Reader = require('../lib/utils/Reader')
+
+const explorers = Reader.readJsonFile('explorers.json')
 
 describe("test for app", () => {
     test("Return a list of explorers", () => {
