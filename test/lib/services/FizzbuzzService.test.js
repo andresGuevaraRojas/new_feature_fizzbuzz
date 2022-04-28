@@ -1,84 +1,83 @@
-const FizzbuzService = require("../../../lib/services/FizzbuzzService")
+const FizzbuzService = require("../../../lib/services/FizzbuzzService");
 
-describe("test for FizzbuzzService",()=>{
-    test('Asign FIZZ trick',()=>{
+describe("test for FizzbuzzService", () => {
+    test("Asign FIZZ trick", () => {
         const explorer = {
-            "name": "Woopa9",
-            "githubUsername": "ajolonauta9",
-            "score": 9,
-            "mission": "java",
-            "stacks": [
+            name: "Woopa9",
+            githubUsername: "ajolonauta9",
+            score: 9,
+            mission: "java",
+            stacks: [
                 "javascript",
                 "elixir",
                 "groovy",
                 "reasonML",
-                "elm"
-            ]
-        }
+                "elm",
+            ],
+        };
 
-        FizzbuzService.applyValidationInExplorer(explorer)
+        FizzbuzService.applyValidationInExplorer(explorer);
 
-        expect(explorer.trick).toBe('FIZZ')
-    })
+        expect(explorer.trick).toBe("FIZZ");
+    });
 
-    test('Asign BUZZ trick',()=>{
+    test("Asign BUZZ trick", () => {
         const explorer = {
-            "name": "Woopa10",
-            "githubUsername": "ajolonauta10",
-            "score": 10,
-            "mission": "java",
-            "stacks": [
+            name: "Woopa10",
+            githubUsername: "ajolonauta10",
+            score: 10,
+            mission: "java",
+            stacks: [
                 "javascript",
                 "elixir",
                 "groovy",
                 "reasonML",
-                "elm"
-            ]
-        }
+                "elm",
+            ],
+        };
 
-        FizzbuzService.applyValidationInExplorer(explorer)
+        FizzbuzService.applyValidationInExplorer(explorer);
 
-        expect(explorer.trick).toBe('BUZZ')
-    })
+        expect(explorer.trick).toBe("BUZZ");
+    });
 
-    test('Asign FIZZBUZZ trick',()=>{
+    test("Asign FIZZBUZZ trick", () => {
         const explorer = {
-            "name": "Woopa15",
-            "githubUsername": "ajolonauta15",
-            "score": 15,
-            "mission": "node",
-            "stacks": [
+            name: "Woopa15",
+            githubUsername: "ajolonauta15",
+            score: 15,
+            mission: "node",
+            stacks: [
                 "javascript",
                 "elixir",
                 "groovy",
                 "reasonML",
-                "elm"
-            ]
-        }
+                "elm",
+            ],
+        };
 
-        FizzbuzService.applyValidationInExplorer(explorer)
+        FizzbuzService.applyValidationInExplorer(explorer);
 
-        expect(explorer.trick).toBe('FIZZBUZZ')
-    })
+        expect(explorer.trick).toBe("FIZZBUZZ");
+    });
 
-    test('Asign score value trick',()=>{            
+    test("Asign score value trick", () => {
         const explorer = {
-            "name": "Woopa13",
-            "githubUsername": "ajolonauta13",
-            "score": 13,
-            "mission": "node",
-            "stacks": [
+            name: "Woopa13",
+            githubUsername: "ajolonauta13",
+            score: 13,
+            mission: "node",
+            stacks: [
                 "javascript",
                 "elixir",
                 "groovy",
                 "reasonML",
-                "elm"
-            ]
-        }
+                "elm",
+            ],
+        };
 
-        FizzbuzService.applyValidationInExplorer(explorer)
+        FizzbuzService.applyValidationInExplorer(explorer);
 
-        expect(explorer.trick).toBe(explorer.score)
-    })
-
-})
+        expect(explorer.trick).toBe(explorer.score);
+    });
+});
