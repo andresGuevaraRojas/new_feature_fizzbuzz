@@ -3,7 +3,10 @@ const {assignFizzBuzzOrScoreTrick} = require('../app')
 const path = require('path')
 const Reader = require('../lib/utils/Reader')
 const ExplorerService = require('../lib/services/ExplorerService')
+const FizzbuzService = require('../lib/services/FizzbuzzService')
+
 const explorers = Reader.readJsonFile('explorers.json')
+
 
 describe("test for app", () => {
     test("Return a list of explorers", () => {
@@ -130,7 +133,9 @@ describe("test for app", () => {
             ]
         }
 
-        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZ')
+        FizzbuzService.applyValidationInExplorer(explorer)
+
+        expect(explorer.trick).toBe('FIZZ')
     })
 
 
@@ -148,8 +153,9 @@ describe("test for app", () => {
                 "elm"
             ]
         }
+        FizzbuzService.applyValidationInExplorer(explorer)
 
-        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('BUZZ')
+        expect(explorer.trick).toBe('BUZZ')
     })
 
 
@@ -168,7 +174,8 @@ describe("test for app", () => {
             ]
         }
 
-        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZBUZZ')
+        FizzbuzService.applyValidationInExplorer(explorer)
+        expect(explorer.trick).toBe('FIZZBUZZ')
     })
 
     test('Asign score value trick',()=>{            
@@ -186,11 +193,7 @@ describe("test for app", () => {
             ]
         }
 
-        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe(explorer.score)
+        FizzbuzService.applyValidationInExplorer(explorer)
+        expect(explorer.trick).toBe(explorer.score)
     })
-
-    
-
-
-    
 })
