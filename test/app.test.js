@@ -1,6 +1,3 @@
-const fs = require("fs")
-const {assignFizzBuzzOrScoreTrick} = require('../app')
-const path = require('path')
 const Reader = require('../lib/utils/Reader')
 const ExplorerService = require('../lib/services/ExplorerService')
 const FizzbuzService = require('../lib/services/FizzbuzzService')
