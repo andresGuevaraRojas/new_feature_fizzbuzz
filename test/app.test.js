@@ -133,11 +133,11 @@ describe("test for app", () => {
     })
 
 
-    test('Asign FIZZ trick',()=>{            
+    test('Asign BUZZ trick',()=>{            
         const explorer = {
-            "name": "Woopa9",
-            "githubUsername": "ajolonauta9",
-            "score": 9,
+            "name": "Woopa10",
+            "githubUsername": "ajolonauta10",
+            "score": 10,
             "mission": "java",
             "stacks": [
                 "javascript",
@@ -148,7 +148,7 @@ describe("test for app", () => {
             ]
         }
 
-        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('FIZZ')
+        expect(assignFizzBuzzOrScoreTrick(explorer).trick).toBe('BUZZ')
     })
 
 
