@@ -2,7 +2,7 @@ const fs = require("fs")
 const {assignFizzBuzzOrScoreTrick} = require('../app')
 const path = require('path')
 const Reader = require('../lib/utils/Reader')
-
+const ExplorerService = require('../lib/services/ExplorerService')
 const explorers = Reader.readJsonFile('explorers.json')
 
 describe("test for app", () => {
@@ -12,12 +12,12 @@ describe("test for app", () => {
     })
 
     test("Get the quantity of explorers names in node", () => {
-        const explorersInNode = explorers.filter((explorer) => explorer.mission == "node");
-        expect(explorersInNode.length).toBe(10)
+        const explorersInNode = ExplorerService.getAmountOfExplorersByMission(explorers,'node')
+        expect(explorersInNode).toBe(10)
     })
 
     test("Get the explorer's at Mission node", () => {
-        const explorersInNode = explorers.filter((explorer) => explorer.mission == "node");
+        const explorersInNode = ExplorerService.filterByMission(explorers,'node')
         const expected = [
             {
                 name: 'Woopa1',
@@ -107,9 +107,8 @@ describe("test for app", () => {
             'ajolonauta14',
             'ajolonauta15'
         ]
-
-        const explorersInNodeToGetUsernames = explorers.filter((explorer) => explorer.mission == "node");
-        const usernamesInNode = explorersInNodeToGetUsernames.map((explorer) => explorer.githubUsername);
+        
+        const usernamesInNode = ExplorerService.getExplorersUsernamesByMission(explorers,'node')
 
         expect(usernamesInNode).toEqual(expected)
 
