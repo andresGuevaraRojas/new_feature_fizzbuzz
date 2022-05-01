@@ -30,4 +30,16 @@ describe("Test for ExplorerController class",()=>{
         
         expect(amountExplorersInNode).toBe(10);
     });
+
+    test('get FizzBuzz value of a number',()=>{
+        const trickFizz = ExplorerController.getFizzBuzz(6)
+        const trickBuzz = ExplorerController.getFizzBuzz(20)
+        const trickFizzBuzz = ExplorerController.getFizzBuzz(15)
+        const trickScore = ExplorerController.getFizzBuzz(8)
+
+        expect(trickFizz).toBe('FIZZ')
+        expect(trickBuzz).toBe('BUZZ')
+        expect(trickFizzBuzz).toBe('FIZZBUZZ')
+        expect(trickScore).toBe(8)
+    })
 });
