@@ -1,6 +1,20 @@
 const FizzbuzService = require("../../../lib/services/FizzbuzzService");
 
 describe("test for FizzbuzzService", () => {
+
+    test("Apply trick validation to a number", () => {
+
+        const trickFizz = FizzbuzService.applyValidationInNumber(6)
+        const trickBuzz = FizzbuzService.applyValidationInNumber(20)
+        const trickFizzBuzz = FizzbuzService.applyValidationInNumber(15)
+        const trickScore = FizzbuzService.applyValidationInNumber(8)
+
+        expect(trickFizz).toBe('FIZZ')
+        expect(trickBuzz).toBe('BUZZ')
+        expect(trickFizzBuzz).toBe('FIZZBUZZ')
+        expect(trickScore).toBe(8)
+    })
+    
     test("Asign FIZZ trick", () => {
         const explorer = {
             name: "Woopa9",
@@ -81,16 +95,5 @@ describe("test for FizzbuzzService", () => {
         expect(explorer.trick).toBe(explorer.score);
     });
 
-    test("Apply trick validation to a number",()=>{
 
-        const trickFizz = FizzbuzService.applyValidationInNumber(6)
-        const trickBuzz = FizzbuzService.applyValidationInNumber(20)
-        const trickFizzBuzz = FizzbuzService.applyValidationInNumber(15)
-        const trickScore = FizzbuzService.applyValidationInNumber(8)
-
-        expect(trickFizz).toBe('FIZZ')
-        expect(trickBuzz).toBe('BUZZ')
-        expect(trickFizzBuzz).toBe('FIZZBUZZ')
-        expect(trickScore).toBe(8)
-    })
 });
